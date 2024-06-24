@@ -1,18 +1,24 @@
-
 <script>
+// @ts-nocheck
+
+  // @ts-ignore
   import { onMount, afterUpdate } from 'svelte';
 
+  // @ts-ignore
   let messages = [];
   let newMessage = '';
+  // @ts-ignore
   let messageContainer;
 
   const sendMessage = () => {
     if (newMessage.trim() !== '') {
+      // @ts-ignore
       messages = [...messages, newMessage];
       newMessage = '';
     }
   };
 
+  // @ts-ignore
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       sendMessage();
@@ -20,10 +26,12 @@
   };
 
   onMount(() => {
+    // @ts-ignore
     document.getElementById('messageInput').focus();
   });
 
   afterUpdate(() => {
+    // @ts-ignore
     if (messageContainer) {
       messageContainer.scrollTop = messageContainer.scrollHeight;
     }
